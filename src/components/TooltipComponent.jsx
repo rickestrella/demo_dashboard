@@ -20,7 +20,7 @@ const TooltipComponent = ({ content, position, children }) => {
       {children}
       {showTooltip && (
         <div
-          className={`absolute bg-gray-800 text-white p-2 rounded-md shadow-md ${
+          className={`absolute bg-gray-800 text-white p-2 rounded shadow-md ${
             position === "Top" ? "bottom-full" : "top-full"
           }`}
           style={{ left: "50%", transform: "translateX(-50%)" }}

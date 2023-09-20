@@ -10,6 +10,7 @@ import {
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Dashboard = () => {
+  const { currentColor } = useStateContext();
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
@@ -23,7 +24,7 @@ const Dashboard = () => {
           <div className="mt-6">
             <Button
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               text="Download"
               borderRadius="10px"
               size="md"
@@ -94,19 +95,19 @@ const Dashboard = () => {
               </div>
               <div className="mt-5">
                 <SparkLine
-                  currentColor="blue"
+                  currentColor={"blue"}
                   id="line-sparkline"
                   type="Line"
                   height="80px"
                   width="280px"
                   data={SparklineAreaData}
-                  color="blue"
+                  color={"blue"}
                 />
               </div>
               <div className="mt-10">
                 <Button
                   color={"white"}
-                  bgColor={"blue"}
+                  bgColor={currentColor}
                   text={"Download Report"}
                   borderRadius={"10px"}
                 />
