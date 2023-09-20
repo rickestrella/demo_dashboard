@@ -113,7 +113,7 @@ const Customers = () => {
   };
 
   return (
-    <div className="mt-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
+    <div className="mt-2 md:m-10 p-2 md:p-10 bg-white dark:bg-main-dark-bg rounded-3xl">
       <Header category={"Page"} title="Customers" />
       {!data ? (
         <>

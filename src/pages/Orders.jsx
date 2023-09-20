@@ -88,7 +88,7 @@ const Orders = () => {
   };
 
   return (
-    <div className="mt-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
+    <div className="mt-2 md:m-10 p-2 md:p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
       <Header category={"Page"} title="Orders" />
       <Table>
         {/* <TableCaption>List of all the orders</TableCaption> */}
@@ -102,7 +102,7 @@ const Orders = () => {
                   item.headerText === "Image"
                     ? "hover:cursor-default pointer-events-none"
                     : "hover:cursor-pointer pointer-events-auto"
-                } w-[${item.width}px] text-center ${item.field === sorting.column ? "font-bold" : "font-medium"}`}
+                } w-[${item.width}px] text-center ${item.field === sorting.column ? "font-bold" : "font-medium"} dark:text-slate-300`}
               >
                 {item.headerText}
                 {sorting.column === item.field && (
@@ -120,7 +120,7 @@ const Orders = () => {
         </TableHeader>
         <TableBody>
           {currentItems.map((order, index) => (
-            <TableRow key={index} className="hover:bg-slate-300 text-center">
+            <TableRow key={index} className="hover:bg-slate-300 dark:hover:bg-slate-800 text-center">
               <TableCell className="w-32">
                 <img
                   src={order.ProductImage}
@@ -128,9 +128,9 @@ const Orders = () => {
                   className="w-20 h-20 object-contain rounded-3xl"
                 />
               </TableCell>
-              <TableCell>{order.OrderItems}</TableCell>
-              <TableCell>{order.CustomerName}</TableCell>
-              <TableCell>$ {order.TotalAmount}</TableCell>
+              <TableCell className="dark:text-slate-300" >{order.OrderItems}</TableCell>
+              <TableCell className="dark:text-slate-300" >{order.CustomerName}</TableCell>
+              <TableCell className="dark:text-slate-300" >$ {order.TotalAmount}</TableCell>
               <TableCell
                 className={`flex w-[5.25rem] justify-center h-5 items-center mx-auto !mt-11 md:mt-6 rounded-full ${
                   order.Status === "pending"
@@ -146,8 +146,8 @@ const Orders = () => {
               >
                 {order.Status}
               </TableCell>
-              <TableCell>{order.OrderID}</TableCell>
-              <TableCell>{order.Location}</TableCell>
+              <TableCell className="dark:text-slate-300" >{order.OrderID}</TableCell>
+              <TableCell className="dark:text-slate-300" >{order.Location}</TableCell>
             </TableRow>
           ))}
         </TableBody>

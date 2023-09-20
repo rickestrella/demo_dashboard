@@ -1,7 +1,6 @@
 export { default as Area } from "./Area";
 export { default as Bar } from "./Bar";
 export { default as Calendar } from "./Calendar";
-export { default as ColorMapping } from "./ColorMapping";
 export { default as Customers } from "./Customers";
 export { default as Dashboard } from "./Dashboard";
 export { default as Employees } from "./Employees";

@@ -13,7 +13,6 @@ import {
   Area,
   Bar,
   Calendar,
-  ColorMapping,
   Customers,
   Dashboard,
   Employees,
@@ -108,7 +107,6 @@ const App = () => {
                 {/* Charts */}
                 <Route path="/area" element={<Area />} />
                 <Route path="/bar" element={<Bar />} />
-                <Route path="/color-mapping" element={<ColorMapping />} />
                 <Route path="/financial" element={<Financial />} />
                 <Route path="/line" element={<Line />} />
                 <Route path="/pie" element={<Pie />} />

@@ -1,6 +1,13 @@
-import React from "react";
+import { useStateContext } from "../../contexts/ContextProvider";
+import React, { useEffect } from "react";
 
 const Pagination = ({ currentPage, totalPages, onNext, onPrev, onPageClick }) => {
+  const { currentColor } = useStateContext();
+
+  useEffect(() => {
+    
+  }, [currentColor])
+
   return (
     <div className="flex justify-center mt-4">
       <button
@@ -15,7 +22,7 @@ const Pagination = ({ currentPage, totalPages, onNext, onPrev, onPageClick }) =>
           key={index}
           onClick={() => onPageClick(index + 1)}
           className={`px-3 py-1 mx-1 border ${
-            currentPage === index + 1 ? "bg-sky-500 text-white rounded hover:bg-sky-400" : "border-1 border-sky-500 text-sky-500 hover:text-white hover:bg-sky-500 hover:bg-opacity-90 transition-all rounded"
+            currentPage === index + 1 ? `bg-[` + currentColor + `] text-white rounded hover:bg-opacity-80` : `border-1 border-[`+ currentColor + `] text-[`+ currentColor +`] hover:text-white hover:bg-[`+ currentColor + `] hover:bg-opacity-90 transition-all rounded`
           }`}
         >
           {index + 1}
@@ -24,7 +31,7 @@ const Pagination = ({ currentPage, totalPages, onNext, onPrev, onPageClick }) =>
       <button
         onClick={onNext}
         disabled={currentPage === totalPages}
-        className={`${currentPage === totalPages ? "border-sky-300 text-sky-300" : "border-sky-500 text-sky-500 hover:text-white hover:bg-sky-500 hover:bg-opacity-90"} px-4 py-2 ml-2  border-1 transition-all rounded`}
+        className={`${currentPage === totalPages ? `border-[`+ currentColor +`] text-[`+ currentColor +`]` : `border-[`+ currentColor + `] text-[` + currentColor + `] hover:text-white hover:bg-[` + currentColor + `] hover:bg-opacity-90`} px-4 py-2 ml-2  border-1 transition-all rounded`}
       >
         Next
       </button>

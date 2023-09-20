@@ -10,6 +10,8 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 
+import modal from "../components/ui/modal"
+
 const Calendar = () => {
   const locales = {
     "en-US": require("date-fns/locale/en-US"),
